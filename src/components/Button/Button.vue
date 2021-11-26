@@ -1,9 +1,15 @@
 <script setup lang="ts">
-defineProps<{
-  color: string,
+import { ColorList } from '../../types/Color.types'
+
+interface ButtonProps {
+  color?: ColorList,
   textColor?: string,
   label: string
-}>()
+}
+const props = withDefaults(defineProps<ButtonProps>(), {
+  color: 'primary',
+  textColor: 'white'
+})
 defineEmits<{
   (e: 'click'): void
 }>()

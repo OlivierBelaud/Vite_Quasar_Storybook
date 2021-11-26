@@ -1,21 +1,30 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Avatar from './components/Avatar/Avatar.vue'
+import Badge from './components/Badge/Badge.vue'
+import Button from './components/Button/Button.vue'
+const handleClick = () => {
+  console.log('click button')
+}
 </script>
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-</template>
+  <div class="q-pa-md q-gutter-sm">
+    <Avatar size="xl" color="primary" text-color="white">J</Avatar>
+    <Avatar size="xl" color="primary" text-color="white">
+      <img src="https://cdn.quasar.dev/img/avatar.png">
+    </Avatar>
+    <Avatar size="xl" color="red" text-color="white" icon="directions" />
+  </div>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  <div class="q-pa-md q-gutter-sm">
+    <Button color="white" text-color="black" label="Standard" @click="handleClick" />
+    <Button color="primary" label="Primary" @click="handleClick" />
+  </div>
+
+  <div class="q-pa-md q-gutter-sm">
+    <Badge color="primary" label="Primary" />
+    <Badge outline color="secondary" label="Outline" />
+    <Badge color="blue">#4D96F2</Badge>
+  </div>
+</template>

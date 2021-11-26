@@ -1,10 +1,12 @@
 <script setup lang="ts">
-interface Props {
+import { ColorList } from '../../types/Color.types'
+
+interface BadgeProps {
   outline?: boolean,
-  color?: string,
+  color?: ColorList,
   label?: string,
 }
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<BadgeProps>(), {
   outline: false,
   color: 'primary'
 })

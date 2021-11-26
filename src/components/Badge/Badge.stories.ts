@@ -1,4 +1,11 @@
-import Badge from '../components/Badge.vue';
+import { Meta, Story } from '@storybook/vue3';
+import { BadgeProps } from './Badge.types';
+import { colorList } from '../../types/Color.types'
+import Badge from './Badge.vue';
+
+interface BadgePropsExtended extends BadgeProps {
+  default: string
+}
 
 export default {
   title: 'Example/Badge',
@@ -17,7 +24,7 @@ export default {
     },
     color: {
       control: { type: 'select' },
-      options: ['primary', 'secondary'],
+      options: colorList,
     },
     label: {
       control: {
@@ -25,9 +32,9 @@ export default {
       }
     }
   },
-};
+} as Meta;
 
-const Template = (args) => ({
+const Template: Story<BadgePropsExtended>  = (args) => ({
   components: { Badge },
   setup() {
     return { args };
