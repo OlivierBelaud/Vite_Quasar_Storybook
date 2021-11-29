@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/vue3';
-import { AvatarProps } from './Avatar.types';
-import { sizeList } from '../../types/Size.types'
-import { colorList } from '../../types/Color.types'
-import Avatar from './Avatar.vue';
+import { Meta, Story } from '@storybook/vue3'
+import { AvatarProps } from './Avatar.types'
+import { sizeList } from '@models/sizes'
+import { colorList } from '@models/colors'
+import Avatar from './Avatar.vue'
 
 interface AvatarPropsExtended extends AvatarProps {
   default: string
@@ -15,7 +15,6 @@ export default {
     default: {
       control: { type: 'text' },
       description: 'Slot content',
-      defaultValue: '',
       table: {
         type: { summary: 'html' },
         defaultValue: { summary: null },
@@ -35,38 +34,47 @@ export default {
     },
     icon: {
       control: { type: 'select' },
-      options: ['directions', 'font_download', 'warning', 'format_size', 'print', 'today', 'style']
-    }
+      options: [
+        'directions',
+        'font_download',
+        'warning',
+        'format_size',
+        'print',
+        'today',
+        'style',
+      ],
+    },
   },
-} as Meta;
+} as Meta
 
-const Template: Story<AvatarPropsExtended>  = (args) => ({
+const Template: Story<AvatarPropsExtended> = (args) => ({
   components: { Avatar },
   setup() {
-    return { args };
+    return { args }
   },
-  template: `<Avatar v-bind="args">${ args.default }</Avatar>`,
-});
+  template: `<Avatar v-bind="args">${args.default}</Avatar>`,
+})
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-  default: 'J'
-};
+  default: 'J',
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   size: 'lg',
-  default: 'J'
-};
+  default: 'J',
+}
 
-export const WithImage = Template.bind({});
+export const WithImage = Template.bind({})
 WithImage.args = {
   size: 'lg',
-  default: `<img src="https://cdn.quasar.dev/img/avatar.png">`
-};
+  default: `<img src="https://cdn.quasar.dev/img/avatar.png">`,
+}
 
-export const WithIcon = Template.bind({});
+export const WithIcon = Template.bind({})
 WithIcon.args = {
   size: 'lg',
-  icon: 'directions'
-};
+  icon: 'directions',
+  default: '',
+}

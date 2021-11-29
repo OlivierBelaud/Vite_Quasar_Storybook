@@ -1,24 +1,20 @@
 <script setup lang="ts">
-import { ColorList } from '../../types/Color.types'
+import { ColorList } from '@models/colors'
 
 interface BadgeProps {
-  outline?: boolean,
-  color?: ColorList,
-  label?: string,
+  outline?: boolean
+  color?: ColorList
+  label?: string
 }
-const props = withDefaults(defineProps<BadgeProps>(), {
+withDefaults(defineProps<BadgeProps>(), {
   outline: false,
-  color: 'primary'
+  color: 'primary',
+  label: undefined,
 })
 </script>
 
 <template>
-  <q-badge
-    :outline="outline"
-    :color="color"
-    :label="label"
-  >
+  <q-badge :outline="outline" :color="color" :label="label">
     <slot></slot>
   </q-badge>
 </template>
-

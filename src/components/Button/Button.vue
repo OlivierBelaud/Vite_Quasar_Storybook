@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ColorList } from '../../types/Color.types'
+import { ColorList } from '@models/colors'
 
 interface ButtonProps {
-  color?: ColorList,
-  textColor?: string,
+  color?: ColorList
+  textColor?: string
   label: string
 }
-const props = withDefaults(defineProps<ButtonProps>(), {
+withDefaults(defineProps<ButtonProps>(), {
   color: 'primary',
-  textColor: 'white'
+  textColor: 'white',
 })
 defineEmits<{
   (e: 'click'): void
@@ -16,11 +16,10 @@ defineEmits<{
 </script>
 
 <template>
-  <q-btn 
-    :color="color" 
-    :text-color="textColor" 
+  <q-btn
+    :color="color"
+    :text-color="textColor"
     :label="label"
     @click="$emit('click')"
   />
 </template>
-

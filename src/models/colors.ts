@@ -3,7 +3,7 @@ export const colorList = [
   'secondary',
   'white',
   'red',
-  'blue'
-] as const;
+  'blue',
+] as const
 
-export type ColorList = typeof colorList[number];
+export type ColorList = typeof colorList[number]

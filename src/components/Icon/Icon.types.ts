@@ -1,16 +1,12 @@
-import { SizeList } from '../../types/Size.types'
-import { ColorList } from '../../types/Color.types'
+import { SizeList } from '@models/sizes'
+import { ColorList } from '@models/colors'
 
-export const iconList = [
-  'font_download',
-  'warning',
-  'format_size'
-] as const;
+export const iconList = ['font_download', 'warning', 'format_size'] as const
 
-export type IconList = typeof iconList[number];
+export type IconList = typeof iconList[number]
 
 export interface IconProps {
-  size?: SizeList,
-  color?: ColorList,
-  name: IconList,
+  size?: SizeList
+  color?: ColorList
+  name: IconList
 }

@@ -1,7 +1,7 @@
-import { ColorList } from '../../types/Color.types'
+import { ColorList } from '@models/colors'
 
 export interface BadgeProps {
-  outline?: boolean,
-  color?: ColorList,
-  label?: string,
+  outline?: boolean
+  color?: ColorList
+  label?: string
 }

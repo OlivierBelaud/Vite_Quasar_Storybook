@@ -1,7 +1,7 @@
-import { ColorList } from '../../types/Color.types'
+import { ColorList } from '@models/colors'
 
 export interface ButtonProps {
-  color?: ColorList,
-  textColor?: string,
+  color?: ColorList
+  textColor?: string
   label: string
 }

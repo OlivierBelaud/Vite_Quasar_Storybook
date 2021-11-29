@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/vue3';
-import { BadgeProps } from './Badge.types';
-import { colorList } from '../../types/Color.types'
-import Badge from './Badge.vue';
+import { Meta, Story } from '@storybook/vue3'
+import { BadgeProps } from './Badge.types'
+import { colorList } from '@models/colors'
+import Badge from './Badge.vue'
 
 interface BadgePropsExtended extends BadgeProps {
   default: string
@@ -13,14 +13,14 @@ export default {
   argTypes: {
     default: {
       control: {
-        type: 'text'
+        type: 'text',
       },
       description: 'Slot content',
     },
     outline: {
       control: {
-        type: 'boolean'
-      }
+        type: 'boolean',
+      },
     },
     color: {
       control: { type: 'select' },
@@ -28,39 +28,39 @@ export default {
     },
     label: {
       control: {
-        type: 'text'
-      }
-    }
+        type: 'text',
+      },
+    },
   },
-} as Meta;
+} as Meta
 
-const Template: Story<BadgePropsExtended>  = (args) => ({
+const Template: Story<BadgePropsExtended> = (args) => ({
   components: { Badge },
   setup() {
-    return { args };
+    return { args }
   },
   template: '<Badge v-bind="args">{{ args.default }}</Badge>',
-});
+})
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-  label: 'Default'
-};
+  label: 'Default',
+}
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({})
 Secondary.args = {
   color: 'secondary',
-  label: 'Secondary'
-};
+  label: 'Secondary',
+}
 
-export const Outline = Template.bind({});
+export const Outline = Template.bind({})
 Outline.args = {
   outline: true,
-  label: 'Outline'
-};
+  label: 'Outline',
+}
 
-export const WithSlot = Template.bind({});
+export const WithSlot = Template.bind({})
 WithSlot.args = {
   color: 'secondary',
-  default: 'WithSlot'
-};
+  default: 'WithSlot',
+}

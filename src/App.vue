@@ -12,13 +12,18 @@ const handleClick = () => {
   <div class="q-pa-md q-gutter-sm">
     <Avatar size="xl" color="primary" text-color="white">J</Avatar>
     <Avatar size="xl" color="primary" text-color="white">
-      <img src="https://cdn.quasar.dev/img/avatar.png">
+      <img src="https://cdn.quasar.dev/img/avatar.png" />
     </Avatar>
     <Avatar size="xl" color="red" text-color="white" icon="directions" />
   </div>
 
   <div class="q-pa-md q-gutter-sm">
-    <Button color="white" text-color="black" label="Standard" @click="handleClick" />
+    <Button
+      color="white"
+      text-color="black"
+      label="Standard"
+      @click="handleClick"
+    />
     <Button color="primary" label="Primary" @click="handleClick" />
   </div>
 
